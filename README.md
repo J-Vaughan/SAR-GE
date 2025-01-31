@@ -8,7 +8,8 @@ project variables are listed in the [Requirements](#Requirements) section.
 > IMPORTANT: If you are currently taking AERO 3841, you are *not* permitted to
 > use any part of this project to help you, for risk of academic misconduct.
 
-This repository is meant to showcase my analysis and writing skills.
+This repository is meant to showcase my analysis and writing skills. And, just
+for fun, I'm going to try to do all of this with free, open-source software.
 
 ## Mission Statement
 
