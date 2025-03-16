@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 25.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   x="0px"
+   y="0px"
+   width="898.6px"
+   height="459.6px"
+   viewBox="0 0 898.6 459.6"
+   style="enable-background:new 0 0 898.6 459.6;"
+   xml:space="preserve"
+   id="svg95"
+   sodipodi:docname="Lunar_Orbit_and_Orientation_with_respect_to_the_Ecliptic.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   inkscape:export-filename="Annotated_Moon_Orbit.png"
+   inkscape:export-xdpi="256"
+   inkscape:export-ydpi="256"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs95"><marker
+     style="overflow:visible"
+     id="marker168"
+     refX="4"
+     refY="0"
+     orient="auto-start-reverse"
+     inkscape:stockid="Dart arrow"
+     markerWidth="1"
+     markerHeight="1"
+     viewBox="0 0 1 1"
+     inkscape:isstock="true"
+     inkscape:collect="always"
+     preserveAspectRatio="xMidYMid"><path
+       style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       transform="scale(-0.5)"
+       id="path168" /></marker><marker
+     style="overflow:visible"
+     id="DartArrow"
+     refX="4"
+     refY="0"
+     orient="auto"
+     inkscape:stockid="Dart arrow"
+     markerWidth="1"
+     markerHeight="1"
+     viewBox="0 0 1 1"
+     inkscape:isstock="true"
+     inkscape:collect="always"
+     preserveAspectRatio="xMidYMid"><path
+       style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+       d="M 0,0 5,-5 -12.5,0 5,5 Z"
+       transform="scale(-0.5)"
+       id="path6" /></marker><inkscape:path-effect
+     effect="powerstroke"
+     message=""
+     id="path-effect166"
+     is_visible="true"
+     lpeversion="1.3"
+     scale_width="1"
+     interpolator_type="CubicBezierJohan"
+     interpolator_beta="0.2"
+     start_linecap_type="zerowidth"
+     end_linecap_type="zerowidth"
+     offset_points="1,1"
+     linejoin_type="extrp_arc"
+     miter_limit="4"
+     not_jump="false"
+     sort_points="true" /><inkscape:path-effect
+     effect="powerstroke"
+     message=""
+     id="path-effect164"
+     is_visible="true"
+     lpeversion="1.3"
+     scale_width="1"
+     interpolator_type="CubicBezierJohan"
+     interpolator_beta="0.2"
+     start_linecap_type="zerowidth"
+     end_linecap_type="zerowidth"
+     offset_points="1,18.867925"
+     linejoin_type="extrp_arc"
+     miter_limit="4"
+     not_jump="false"
+     sort_points="true" /><inkscape:path-effect
+     effect="powerstroke"
+     message=""
+     id="path-effect162"
+     is_visible="true"
+     lpeversion="1.3"
+     scale_width="1"
+     interpolator_type="CubicBezierJohan"
+     interpolator_beta="0.2"
+     start_linecap_type="zerowidth"
+     end_linecap_type="zerowidth"
+     offset_points="1,18.867925"
+     linejoin_type="extrp_arc"
+     miter_limit="4"
+     not_jump="false"
+     sort_points="true" /><rect
+     x="121.19049"
+     y="57.120248"
+     width="50.387443"
+     height="31.926526"
+     id="rect162" /><rect
+     x="295.15748"
+     y="258.45283"
+     width="86.657714"
+     height="18.026542"
+     id="rect161" /><rect
+     x="300.80435"
+     y="256.71533"
+     width="83.617092"
+     height="18.895291"
+     id="rect160" /><rect
+     x="288.64186"
+     y="180.48261"
+     width="124.88267"
+     height="14.985921"
+     id="rect159" /><rect
+     x="246.29035"
+     y="163.97638"
+     width="100.34051"
+     height="21.067164"
+     id="rect158" /><rect
+     x="235.64817"
+     y="169.40606"
+     width="92.52177"
+     height="18.895291"
+     id="rect157" /><inkscape:path-effect
+     effect="bspline"
+     id="path-effect155"
+     is_visible="true"
+     lpeversion="1.3"
+     weight="33.333333"
+     steps="2"
+     helper_size="0"
+     apply_no_weight="true"
+     apply_with_weight="true"
+     only_selected="false"
+     uniform="false" /><inkscape:path-effect
+     effect="circle_with_radius"
+     id="path-effect154"
+     is_visible="true"
+     lpeversion="1" /><inkscape:path-effect
+     effect="fill_between_many"
+     method="bsplinespiro"
+     autoreverse="false"
+     close="false"
+     join="false"
+     linkedpaths="#path162,0,1"
+     id="path-effect163" /><inkscape:path-effect
+     effect="fill_between_many"
+     method="bsplinespiro"
+     autoreverse="false"
+     close="false"
+     join="false"
+     linkedpaths="#path163,0,1"
+     id="path-effect165" /><inkscape:path-effect
+     effect="fill_between_many"
+     method="bsplinespiro"
+     autoreverse="false"
+     close="false"
+     join="false"
+     linkedpaths="#path165,0,1"
+     id="path-effect167" /></defs><sodipodi:namedview
+   id="namedview95"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="2.3021609"
+   inkscape:cx="454.79011"
+   inkscape:cy="227.17787"
+   inkscape:window-width="2560"
+   inkscape:window-height="1368"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg95" />
+<style
+   type="text/css"
+   id="style1">
+	.st0{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st1{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:17.8749,5.9583;}
+	.st2{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:2.0062,1.0031;}
+	.st3{fill:none;stroke:#000000;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:1.9949,0.9975;}
+	.st5{font-family:'AlegreyaSans-Regular';}
+	.st6{font-size:18px;}
+	.st7{font-size:16px;}
+	.st8{font-size:10px;}
+	.st9{font-size:12px;}
+	.st10{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:15.8733,5.2911;}
+</style>
+<g
+   id="Layer_1">
+	<circle
+   class="st0"
+   cx="187"
+   cy="232.9"
+   r="104.6"
+   id="circle1" />
+	<circle
+   class="st0"
+   cx="751.3"
+   cy="182.3"
+   r="28.3"
+   id="circle2" />
+	<line
+   class="st0"
+   x1="11.2"
+   y1="232.9"
+   x2="796.5"
+   y2="232.9"
+   id="line2" />
+	<g
+   id="g6">
+		<g
+   id="g5">
+			<line
+   class="st0"
+   x1="44.8"
+   y1="171.3"
+   x2="53.1"
+   y2="174.9"
+   id="line3" />
+			<line
+   class="st1"
+   x1="58.5"
+   y1="177.2"
+   x2="318.2"
+   y2="289.8"
+   id="line4" />
+			<line
+   class="st0"
+   x1="320.9"
+   y1="291"
+   x2="329.2"
+   y2="294.6"
+   id="line5" />
+		</g>
+	</g>
+	<g
+   id="g9">
+		<g
+   id="g8">
+			<line
+   class="st0"
+   x1="187"
+   y1="387.9"
+   x2="187"
+   y2="386.9"
+   id="line6" />
+			<line
+   class="st2"
+   x1="187"
+   y1="385.9"
+   x2="187"
+   y2="79.5"
+   id="line7" />
+			<line
+   class="st0"
+   x1="187"
+   y1="79"
+   x2="187"
+   y2="78"
+   id="line8" />
+		</g>
+	</g>
+	<line
+   class="st3"
+   x1="187"
+   y1="43.9"
+   x2="187"
+   y2="73.9"
+   id="line9" />
+	<line
+   class="st3"
+   x1="187"
+   y1="45"
+   x2="187"
+   y2="75"
+   id="line10" />
+	<line
+   class="st3"
+   x1="262.2"
+   y1="59.5"
+   x2="250.2"
+   y2="87.1"
+   id="line11" />
+	<g
+   id="g15">
+		<g
+   id="g14">
+			<path
+   class="st3"
+   d="M252.8,65.7c-18.6-7.3-38.7-11.7-59.7-12.4"
+   id="path11" />
+			<g
+   id="g12">
+				<path
+   d="M251.6,65.2l-2.5,1.9l0.1,0.1l4.7,0c1.5,0.3,3.1,0.5,4.6,0.8c-1.3-0.9-2.6-1.8-3.9-2.7l-3.4-3.3l-0.1,0L251.6,65.2z"
+   id="path12" />
+			</g>
+			<g
+   id="g13">
+				<path
+   d="M194.4,53.4l1.6,2.7l-0.1,0.1l-4.4-1.9c-1.5-0.4-3.1-0.8-4.6-1.1c1.5-0.3,3.1-0.6,4.6-0.9l4.5-1.6l0.1,0L194.4,53.4z"
+   id="path13" />
+			</g>
+		</g>
+	</g>
+	<g
+   id="g18">
+		<g
+   id="g17">
+			<polyline
+   class="st3"
+   points="243.3,119 315.9,143.5 330.1,143.5    "
+   id="polyline15" />
+			<g
+   id="g16">
+				<path
+   d="M244.6,119.4l2.4-2l-0.1-0.1l-4.7,0.2c-1.6-0.2-3.1-0.3-4.7-0.5c1.3,0.8,2.7,1.6,4,2.4l3.6,3.1l0.1,0L244.6,119.4z"
+   id="path15" />
+			</g>
+		</g>
+	</g>
+	<g
+   id="g21">
+		<g
+   id="g20">
+			<polyline
+   class="st3"
+   points="252.8,321.7 291.8,345.5 306,345.5    "
+   id="polyline18" />
+			<g
+   id="g19">
+				<path
+   d="M254,322.4l2.8-1.4l0-0.1l-4.7-0.8c-1.5-0.5-3-1-4.5-1.5c1.1,1.1,2.3,2.2,3.4,3.3l2.8,3.8l0.1,0L254,322.4z"
+   id="path18" />
+			</g>
+		</g>
+	</g>
+	<g
+   id="g24">
+		<g
+   id="g23">
+			<polyline
+   class="st3"
+   points="335.3,294 357.5,291.9 374,291.9    "
+   id="polyline21" />
+			<g
+   id="g22">
+				<path
+   d="M336.6,293.9l1.4-2.8l-0.1-0.1l-4.2,2.2c-1.5,0.5-3,1-4.5,1.4c1.6,0.2,3.1,0.4,4.7,0.6l4.6,1.3l0.1-0.1L336.6,293.9z"
+   id="path21" />
+			</g>
+		</g>
+	</g>
+	<g
+   id="g27">
+		<g
+   id="g26">
+			<polyline
+   class="st3"
+   points="485.3,237.5 473.6,250.8 459.7,250.8    "
+   id="polyline24" />
+			<g
+   id="g25">
+				<path
+   d="M484.4,238.5l0.9,3l0.1,0l1.6-4.5c0.8-1.4,1.5-2.8,2.3-4.1c-1.3,0.9-2.5,1.9-3.8,2.8l-4.2,2.1l0,0.1L484.4,238.5z"
+   id="path24" />
+			</g>
+		</g>
+	</g>
+	<g
+   id="g30">
+		<g
+   id="g29">
+			<polyline
+   class="st3"
+   points="517.1,199.9 498.7,190.7 484.9,192    "
+   id="polyline27" />
+			<g
+   id="g28">
+				<path
+   d="M515.9,199.3l-2.7,1.7l0.1,0.1l4.7,0.4c1.5,0.4,3,0.8,4.6,1.2c-1.2-1-2.4-2-3.7-3l-3.2-3.5h-0.1L515.9,199.3z"
+   id="path27" />
+			</g>
+		</g>
+	</g>
+	<line
+   class="st0"
+   x1="125.3"
+   y1="375.1"
+   x2="248.6"
+   y2="90.8"
+   id="line30" />
+	<line
+   class="st0"
+   x1="12.6"
+   y1="248.6"
+   x2="806.6"
+   y2="177.2"
+   id="line31" />
+	<g
+   id="g36">
+		<g
+   id="g35">
+			<g
+   id="g34">
+				<path
+   class="st3"
+   d="M572.4,226.8c-0.1-7.5-0.4-14.9-1-22.3"
+   id="path31" />
+				<g
+   id="g32">
+					<path
+   d="M572.3,225.5l-2.7-1.6l-0.1,0.1l1.8,4.4c0.4,1.5,0.7,3.1,1.1,4.6c0.3-1.5,0.6-3.1,0.9-4.6l1.7-4.4l0-0.1L572.3,225.5z"
+   id="path32" />
+				</g>
+				<g
+   id="g33">
+					<path
+   d="M571.4,205.8l-2.6,1.8l-0.1-0.1l1.5-4.5c0.2-1.6,0.5-3.1,0.7-4.7c0.4,1.5,0.9,3,1.3,4.5l2,4.3l0,0.1L571.4,205.8z"
+   id="path33" />
+				</g>
+			</g>
+		</g>
+	</g>
+	<g
+   id="g37">
+		<polyline
+   class="st3"
+   points="572,232.9 572,250.5 586.5,250.5   "
+   id="polyline36" />
+	</g>
+	<g
+   id="g40">
+		<g
+   id="g39">
+			<line
+   class="st0"
+   x1="747.4"
+   y1="139.1"
+   x2="747.5"
+   y2="140.1"
+   id="line37" />
+			<line
+   class="st4"
+   x1="747.6"
+   y1="141.1"
+   x2="755"
+   y2="224"
+   id="line38" />
+			<line
+   class="st0"
+   x1="755.1"
+   y1="224.5"
+   x2="755.2"
+   y2="225.5"
+   id="line39" />
+		</g>
+	</g>
+	<line
+   class="st0"
+   x1="752.5"
+   y1="137.3"
+   x2="750.1"
+   y2="227.3"
+   id="line40" />
+	<line
+   class="st3"
+   x1="744.5"
+   y1="106.6"
+   x2="747"
+   y2="134.4"
+   id="line41" />
+	<line
+   class="st3"
+   x1="753.3"
+   y1="106.4"
+   x2="752.6"
+   y2="134.2"
+   id="line42" />
+	<g
+   id="g45">
+		<g
+   id="g44">
+			<path
+   class="st3"
+   d="M759.2,114c4,0.5,7.9,1.3,11.6,2.4h14.9"
+   id="path42" />
+			<g
+   id="g43">
+				<path
+   d="M760.6,114.2l1.9-2.6l-0.1-0.1l-4.5,1.4c-1.6,0.2-3.1,0.4-4.7,0.6c1.5,0.5,3,0.9,4.5,1.4l4.2,2.1l0.1,0L760.6,114.2z"
+   id="path43" />
+			</g>
+		</g>
+	</g>
+	<g
+   id="g48">
+		<g
+   id="g47">
+			<path
+   class="st3"
+   d="M739,114.6c-4,0.7-7.8,1.8-11.5,3.1"
+   id="path45" />
+			<g
+   id="g46">
+				<path
+   d="M737.7,114.9l-1.2,2.9l0.1,0l4.1-2.4c1.5-0.6,2.9-1.1,4.4-1.7c-1.6-0.1-3.1-0.2-4.7-0.3l-4.6-1.1l-0.1,0.1L737.7,114.9z      "
+   id="path46" />
+			</g>
+		</g>
+	</g>
+	<text
+   transform="matrix(1 0 0 1 302.3184 85.6539)"
+   id="text50"><tspan
+     x="0"
+     y="0"
+     class="st5 st6"
+     id="tspan48">23.44°</tspan><tspan
+     x="-1.2"
+     y="14"
+     class="st5 st7"
+     id="tspan49">EARTH</tspan><tspan
+     x="-14.1"
+     y="28"
+     class="st5 st7"
+     id="tspan50">OBLIQUITY</tspan></text>
+	<text
+   transform="matrix(1 0 0 1 595.0044 255.584)"
+   id="text53"><tspan
+     x="0"
+     y="0"
+     class="st5 st6"
+     id="tspan51">5.14°</tspan><tspan
+     x="-36.1"
+     y="14"
+     class="st5 st7"
+     id="tspan52">LUNAR ORBITAL</tspan><tspan
+     x="-28.1"
+     y="28"
+     class="st5 st7"
+     id="tspan53">INCLINATION</tspan></text>
+	<text
+   transform="matrix(1 0 0 1 813.8856 261.8777)"
+   id="text57"><tspan
+     x="0"
+     y="0"
+     class="st5 st6"
+     id="tspan54">1.54°</tspan><tspan
+     x="-7"
+     y="14"
+     class="st5 st7"
+     id="tspan55">LUNAR</tspan><tspan
+     x="-19.4"
+     y="28"
+     class="st5 st7"
+     id="tspan56">OBLIQUITY</tspan><tspan
+     x="-22.3"
+     y="42"
+     class="st5 st7"
+     id="tspan57">TO ECLIPTIC</tspan></text>
+	<text
+   transform="matrix(1 0 0 1 484.5813 414.4659)"
+   class="st5 st6"
+   id="text58">NOTE:</text>
+	<text
+   transform="matrix(1 0 0 1 537.4119 407.2315)"
+   id="text59"><tspan
+     x="0"
+     y="0"
+     class="st5 st8"
+     id="tspan58">EARTH AND MOON RELATIVE SIZES AND ANGLES ARE TO SCALE.</tspan><tspan
+     x="0"
+     y="10"
+     class="st5 st8"
+     id="tspan59">EARTH AND MOON RELATIVE DISTANCE IS NOT TO SCALE.</tspan></text>
+	<text
+   transform="matrix(1 0 0 1 335.4308 147.1924)"
+   id="text61"><tspan
+     x="0"
+     y="0"
+     class="st5 st7"
+     id="tspan60">EARTH</tspan><tspan
+     x="7"
+     y="14"
+     class="st5 st7"
+     id="tspan61">AXIS</tspan></text>
+	<text
+   transform="matrix(1 0 0 1 789.424 92.4442)"
+   id="text64"><tspan
+     x="0"
+     y="0"
+     class="st5 st7"
+     id="tspan62">LUNAR</tspan><tspan
+     x="-12.4"
+     y="14"
+     class="st5 st7"
+     id="tspan63">OBLIQUITY</tspan><tspan
+     x="5.4"
+     y="30"
+     class="st5 st6"
+     id="tspan64">6.68°</tspan></text>
+	<text
+   transform="matrix(0.9175 0.3978 -0.3978 0.9175 245.7498 100.9311)"
+   class="st5 st7"
+   id="text65">N</text>
+	<text
+   transform="matrix(0.9175 0.3978 -0.3978 0.9175 116.2363 371.3208)"
+   class="st5 st7"
+   id="text66">S</text>
+	<text
+   transform="matrix(0.9996 2.687483e-02 -2.687483e-02 0.9996 753.329 145.2255)"
+   class="st5 st9"
+   id="text67">N</text>
+	<text
+   transform="matrix(0.9996 2.687483e-02 -2.687483e-02 0.9996 742.2011 227.103)"
+   class="st5 st9"
+   id="text68">S</text>
+	<text
+   transform="matrix(1 0 0 1 312.3539 350.6889)"
+   class="st5 st7"
+   id="text69">EARTH</text>
+	<text
+   transform="matrix(1 0 0 1 399.9497 296.5281)"
+   id="text71"><tspan
+     x="0"
+     y="0"
+     class="st5 st7"
+     id="tspan69">EARTH</tspan><tspan
+     x="-19.8"
+     y="14"
+     class="st5 st7"
+     id="tspan70">EQUATORIAL</tspan><tspan
+     x="0.9"
+     y="28"
+     class="st5 st7"
+     id="tspan71">PLANE</tspan></text>
+	<text
+   transform="matrix(1 0 0 1 580.5164 145.4792)"
+   id="text74"><tspan
+     x="0"
+     y="0"
+     class="st5 st7"
+     id="tspan72">LUNAR</tspan><tspan
+     x="-19.3"
+     y="14"
+     class="st5 st7"
+     id="tspan73">EQUATORIAL</tspan><tspan
+     x="1.4"
+     y="28"
+     class="st5 st7"
+     id="tspan74">PLANE</tspan></text>
+	<text
+   transform="matrix(1 0 0 1 803.5933 151.7729)"
+   id="text76"><tspan
+     x="0"
+     y="0"
+     class="st5 st7"
+     id="tspan75">LUNAR</tspan><tspan
+     x="7.6"
+     y="14"
+     class="st5 st7"
+     id="tspan76">AXIS</tspan></text>
+	<text
+   transform="matrix(1 0 0 1 618.5075 115.4092)"
+   class="st5 st7"
+   id="text77">MOON</text>
+	<text
+   transform="matrix(1 0 0 1 338.6863 255.3908)"
+   class="st5 st7"
+   id="text78">ECLIPTIC PLANE</text>
+	<text
+   transform="matrix(0.996 -8.958964e-02 8.958964e-02 0.996 330.888 210.9725)"
+   class="st5 st7"
+   id="text79">LUNAR ORBIT PLANE</text>
+	<path
+   class="st3"
+   d="M258.5,68c8.8,3.8,17.2,8.3,25.2,13.4h12.7"
+   id="path79" />
+	<g
+   id="g83">
+		<g
+   id="g82">
+			<line
+   class="st3"
+   x1="788.5"
+   y1="189.4"
+   x2="788.5"
+   y2="226.8"
+   id="line79" />
+			<g
+   id="g80">
+				<path
+   d="M788.5,190.7l2.7,1.6l0.1-0.1l-1.8-4.4c-0.3-1.5-0.7-3.1-1-4.6c-0.3,1.5-0.7,3.1-1,4.6l-1.8,4.4l0,0.1L788.5,190.7z"
+   id="path80" />
+			</g>
+			<g
+   id="g81">
+				<path
+   d="M788.5,225.5l2.7-1.6l0.1,0.1l-1.8,4.4c-0.3,1.5-0.7,3.1-1,4.6c-0.3-1.5-0.7-3.1-1-4.6l-1.8-4.4l0-0.1L788.5,225.5z"
+   id="path81" />
+			</g>
+		</g>
+	</g>
+	<polyline
+   class="st3"
+   points="788.5,232.9 788.5,258.3 802.4,258.3  "
+   id="polyline83" />
+	<g
+   id="g86">
+		<g
+   id="g85">
+			<line
+   class="st0"
+   x1="707.9"
+   y1="181.1"
+   x2="716.9"
+   y2="181.4"
+   id="line83" />
+			<line
+   class="st10"
+   x1="722.2"
+   y1="181.5"
+   x2="783"
+   y2="183.1"
+   id="line84" />
+			<line
+   class="st0"
+   x1="785.6"
+   y1="183.2"
+   x2="794.6"
+   y2="183.4"
+   id="line85" />
+		</g>
+	</g>
+	<g
+   id="g89">
+		<g
+   id="g88">
+			<polyline
+   class="st3"
+   points="633.3,140.8 647.6,140.8 702.8,177.7    "
+   id="polyline86" />
+			<g
+   id="g87">
+				<path
+   d="M701.7,177l0.1-3.2l0.1,0l2.7,3.9c1.1,1.1,2.2,2.3,3.3,3.4c-1.5-0.6-2.9-1.1-4.4-1.7l-4.6-1l-0.1-0.1L701.7,177z"
+   id="path86" />
+			</g>
+		</g>
+	</g>
+	<g
+   id="g92">
+		<g
+   id="g91">
+			<polyline
+   class="st3"
+   points="667.1,110.3 681.3,110.3 726.8,157    "
+   id="polyline89" />
+			<g
+   id="g90">
+				<path
+   d="M725.9,156l0.8-3.1l0.1,0l1.8,4.4c0.8,1.3,1.7,2.7,2.5,4c-1.3-0.9-2.6-1.7-3.9-2.6l-4.3-1.9l0-0.1L725.9,156z"
+   id="path89" />
+			</g>
+		</g>
+	</g>
+	<g
+   id="g95">
+		<g
+   id="g94">
+			<polyline
+   class="st3"
+   points="799.1,147.9 783.8,147.9 758.5,150.5    "
+   id="polyline92" />
+			<g
+   id="g93">
+				<path
+   d="M759.9,150.4l1.9,2.5l-0.1,0.1l-4.6-1.3c-1.6-0.2-3.1-0.4-4.7-0.5c1.5-0.5,3-1,4.5-1.5l4.2-2.2l0.1,0L759.9,150.4z"
+   id="path92" />
+			</g>
+		</g>
+	</g>
+</g>
+<g
+   id="Layer_2">
+</g>
+<path
+   style="fill:#d40000;stroke:#d40000"
+   d="M 202.99046,372.83342 173.13622,109.8675"
+   id="path95"
+   sodipodi:nodetypes="cc" /><path
+   style="fill:none;stroke:#d40000;marker-start:url(#marker168);marker-end:url(#DartArrow)"
+   d="m 183.68177,178.51583 c 78.11985,-12.49358 81.64902,62.50781 74.22264,81.73585"
+   id="path155"
+   sodipodi:nodetypes="cc" /><path
+   style="fill:none;stroke:#00a9d4;stroke-opacity:1;marker-start:url(#marker168);marker-end:url(#marker168)"
+   d="m 186.13035,200.80891 c 34.96715,-3.2578 39.05982,25.35934 39.05982,25.35934"
+   id="path156"
+   sodipodi:nodetypes="cc" /><path
+   style="fill:none;stroke:#fcba24;stroke-linecap:butt;stroke-opacity:1;marker-start:url(#marker168);marker-end:url(#DartArrow)"
+   d="m 184.93421,190.15466 c 46.91244,-8.47029 59.18986,39.67602 59.18986,39.67602"
+   id="path157"
+   sodipodi:nodetypes="cc" /><text
+   xml:space="preserve"
+   id="text157"
+   style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect157);display:inline;fill:none;stroke:#d40000" /><text
+   xml:space="preserve"
+   id="text158"
+   style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect158);display:inline;fill:#d40000;stroke:none"
+   transform="translate(11.945298,-21.718725)"><tspan
+     x="246.29102"
+     y="174.89506"
+     id="tspan1">i = 121 deg</tspan></text><text
+   xml:space="preserve"
+   id="text159"
+   style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect159);display:inline;fill:#fcba24;fill-opacity:1;stroke:none"
+   transform="translate(13.46561,-16.506231)"><tspan
+     x="288.64258"
+     y="191.40092"
+     id="tspan2">γ = 97.56 deg  </tspan></text><text
+   xml:space="preserve"
+   id="text160"
+   style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect160);display:inline;fill:#d40000;stroke:none" /><text
+   xml:space="preserve"
+   id="text161"
+   style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect161);display:inline;fill:#00a9d4;fill-opacity:1;stroke:none"
+   transform="translate(34.315586,-81.010845)"><tspan
+     x="295.1582"
+     y="269.37163"
+     id="tspan3">α = 92.42 deg</tspan></text><text
+   xml:space="preserve"
+   id="text162"
+   style="text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect162);display:inline;fill:#d40000;stroke:none"><tspan
+     x="121.19141"
+     y="68.039596"
+     id="tspan4">ORBIT </tspan><tspan
+     x="121.19141"
+     y="83.039596"
+     id="tspan5">PLANE</tspan></text><path
+   style="fill:none;stroke:#d40000;marker-end:url(#DartArrow)"
+   d="m 137.47953,88.612399 6.20621,29.473851 27.94037,0.49799"
+   id="path167"
+   sodipodi:nodetypes="ccc" /><path
+   style="fill:#00a9d4;fill-opacity:1;stroke:#d40000;stroke-opacity:1"
+   d="m 275.61062,157.46076 -51.86104,23.69977"
+   id="path169"
+   sodipodi:nodetypes="cc" /><path
+   style="fill:#fcba24;fill-opacity:1;stroke:#fcba24;stroke-opacity:1"
+   d="m 298.41529,173.53262 -74.56346,24.99454"
+   id="path170"
+   sodipodi:nodetypes="cc" /><path
+   style="fill:#00a9d4;fill-opacity:1;stroke:#00a9d4;stroke-opacity:1"
+   d="m 324.26057,188.30134 -103.3217,27.58912"
+   id="path171"
+   sodipodi:nodetypes="cc" /><rect
+   style="fill:none;fill-opacity:1;stroke:#fcba24;stroke-linecap:butt;stroke-opacity:0.94509804"
+   id="rect171"
+   width="130.74672"
+   height="21.718725"
+   x="333.16525"
+   y="238.4716" /><rect
+   style="fill:none;fill-opacity:1;stroke:#00a9d4;stroke-width:0.953988;stroke-linecap:butt;stroke-opacity:1"
+   id="rect172"
+   width="166.4032"
+   height="17.935047"
+   x="307.0567"
+   y="224.33145"
+   transform="matrix(0.99629034,-0.08605555,0.09196842,0.99576192,0,0)" /></svg>

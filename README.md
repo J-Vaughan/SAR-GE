@@ -8,8 +8,10 @@ project variables are listed in the [Requirements](#Requirements) section.
 > IMPORTANT: If you are currently taking AERO 3841, you are *not* permitted to
 > use any part of this project to help you, for risk of academic misconduct.
 
-This repository is meant to showcase my analysis and writing skills. And, just
-for fun, I'm going to try to do all of this with free, open-source software.
+This repository is meant to showcase my analysis and writing skills. ~~And, just
+for fun, I'm going to try to do all of this with free, open-source software.~~
+Why not use the tools given to me? I'll be using Ansys STK 12 and SolidWorks
+2024.
 
 ## Mission Statement
 
@@ -29,6 +31,13 @@ The requirements listed in this section have been prescribed by the project
 document.
 
 ## Communications
+### Payload Data
+- Required resolution of 5 m
+- Area covered per image of 100 km x 100 km
+- Ground swath width of 100 km
+- Entire country must be imaged within 14 days
+
+### Housekeeping Data
 - The communications package must include the following data in addition to the
   payload data:
   | Data | Bits |
