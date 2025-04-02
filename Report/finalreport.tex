@@ -278,7 +278,7 @@ All launchers deliver their payload to GTO, with fairly minor differences in del
     Long March 3B~\cite{longmarch} & China & \num{28.5} & \num{200} & \num{35786} & \num{178} & \num{5100} & \num{4.0} & \num{70}\hspace{.9em}\cite{longmarchprice}\\
     \bottomrule
   \end{tabular}
-  \caption{Selected launch platform comparison. \textdagger: includes payload adapter. Prices in millions USD.}
+  \caption{Selected launch platform comparison. \textdagger: includes payload adapter. Prices in millions USD, not adjusted for inflation.}
   \label{tab:launchertrade}
 \end{table}
 
@@ -329,10 +329,6 @@ For this reason, I'm going to estimate the East-West stationkeeping to be equal 
 \end{equation}
 This ought to roughly account for the stationkeeping requirements of the spacecraft at this stage of design. 
 
-\subsection{Orbital Transfer}
-Placing a satellite in GEO usually entails delivery from a launch plaftorm to a GTO, then some sort of transfer into GEO.
-I will budget for and deal with this later, when I consider the launch platform.
-
 \subsection{Decommissioning}
 
 The SME-SMAD recommends handling the special scarcity and properties of the GEO orbit (specifically its vulnerability to debris and junk) by raising spacecraft \qty{500}{\kilo\metre} above GEO at the end of their life.
@@ -341,6 +337,17 @@ The $\Delta V$ required for that is
   {\Delta V}_\text{disposal} = \qty{18}{\metre\per\second}
 \end{equation}
 from SME-SMAD page 233 for decommissioning a GEO satellite~\cite{sme}, and the propellant mass will be found at a later date after an in-depth $\Delta V$ analysis.
+
+\subsection{Orbital Transfer}
+The transfer from the SpaceX GTO orbit in Table~\ref{tab:launchertrade} will be a combined plane-change and elliptical-to-circular maneuver.
+The $\Delta V$ required for such a change is~\cite{aero3240}:
+\begin{equation}
+  \Delta V=\sqrt{v_1^2+v_2^2-2v_1v_2\cos{\Delta i}}
+\end{equation}
+where $\Delta i=\ang{121}-\ang{28.5}=\ang{92.5}$, and $v_1,\,v_2$ are the orbital velocities of the transfer orbit and final orbit respectively.
+The full calculation is scanned and attached before the preliminary drawings of Appendix~\ref{app:julia}.
+Hand calculations were chosen as a change of pace.
+The final result is a $\Delta V$ of \qty{3.5253}{\kilo\meter\per\second}.
 
 
 \section{Power and Configuration Implications}\label{app:powerandconf}
