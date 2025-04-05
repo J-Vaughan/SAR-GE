@@ -182,6 +182,14 @@ The remaining subsystems will all ideally fit in the remaining payload-sized are
 
 More engineering drawings are available in Appendix~\ref{app:julia}.
 
+Configuration
+
+Dimension calculations (0.5)
+
+Drawings (3.5)
+
+Justification (2)
+
 
 \subsection{Preliminary Design of Spacecraft Subsystems}
 
@@ -247,18 +255,60 @@ Then,
   [{C/N}]_\text{achieved}=[P_t]+[G_t]+\left[\frac GT\right]-[L_\text{path}]-[L_\text{point}]-[L_\text{atmosphere}]-[k]-[B]
 \end{equation}
 
+Antenna type selection (1). Discuss omni antenna for telecommand
+
+Discussion of assumptions and explanation/justification (3)
+
 \subsubsection{Power Subsystem}
-TODO
-\subsubsection{Attitude Determination and Control Subsystem}
-TODO
+max eclipse time calculations (3)
+
+solar panel sizing and power generation calcs (3)
+
+bus design (voltage, regulation) and explanation/justification (1)
+
+harness calculations (1)
+
+battery sizing calculations and discussion whether batteries are needed (2)
+
+\subsubsection{Thermal Control Subsystem}
+WCC calcs (4)
+
+WCH calcs (4)
+
+thermal control hardware selection (including insulation and coatings) with explanation/justification (2)
+
+\subsubsection{Guidance and Navigation Subsystem}
+Relevant perturbations and explanation (1)
+
+orbit control strategy (maintenance, actuators/sensors) (2)
+
+choice of autonomous or groun control with explanation/justification (2)
+
+de-orbiting strategy and explanation (1)
+
 \subsubsection{Propulsion Subsystem}
+Orbital transfer from injected orbit (calculations and justification for maneuver choice) (3)
+
+Propellant mass calculations for maintenance and deo-orbiting (3) take from appendix and put here
 
 Given the GTO... stationkeeping... disposal...
 
 Can't use ion engine because of power requirements...\cite{next}
 
 yeah
-\subsubsection{etc...}
+\subsubsection{Attitude Determination and Control Subsystem}
+attitude control strategy and explanation/justification (2)
+
+actuator selection and explanation/justification (1)
+
+sensor selection and justification/explanation (2)
+
+pointing requirements, maneuvers needed and explanation/justification (1)
+
+\subsubsection{Structures}
+material selections and explanation/justification (2.5)
+
+mechanism selection and explanation/justification (2.5)
 
 
 \section{Launcher Selection Trade Study}
@@ -282,9 +332,27 @@ All launchers deliver their payload to GTO, with fairly minor differences in del
   \label{tab:launchertrade}
 \end{table}
 
+explain shared launch reasoning, or actually evaluate if shared launch is even possible given the huge propulsion requirements
+
+
+\section{Schedule}
+worth 2 marks :/
+
+order of various design stages, can include chart (2)
+
+\section{Cost}
+worth 2 marks :/
+
+major cost elements (launcher, payload, testing, insurance) (1)
+
+reliable sources references (textbook, other missions, etc) (1)
 
 
 \section{Conclusions}
+summarize major values/parameters (3)
+
+discuss future work (2)
+
 Although further analysis is required to ensure that the current configuration can reject/retain enough heat, and the delta V budget is yet to be done, the current iteration of SARGE looks to be reasonable.
 The mass distribution and total mass falls within the ranges typical of a GEO mission.
 The total estimated power draw is somewhat lower than what is mentioned in the course slides.
