@@ -8,6 +8,7 @@
 \usepackage{xcolor}
 \usepackage{subcaption}
 \usepackage{siunitx}
+\usepackage{subfig}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \let\temp\rmdefault
@@ -31,28 +32,31 @@
   \includegraphics[width=.7\linewidth]{CarletonLogo}
 \end{figure}
 \maketitle
-\tableofcontents
 \pagenumbering{gobble}
+\clearpage
+\tableofcontents
 \clearpage
 \pagenumbering{arabic}
 \section{Introduction}
-This preliminary report is intended to inform the reader of the progress made on developing the SARGE satellite.
-SARGE stands for \textbf{S}ynthetic~\textbf{A}perture~\textbf{R}adar:~\textbf{G}reenhouse~\textbf{E}missions, a satellite platform designed to monitor for potential leaks of cross-Canada pipelines using synthetic aperture radar.
+SARGE, \textbf{S}ynthetic~\textbf{A}perture~\textbf{R}adar:~\textbf{G}reenhouse~\textbf{E}missions, is a satellite platform designed to monitor for potential leaks of cross-Canada pipelines using synthetic aperture radar.
+This report details a prelimnary design that should provide a solid starting point for further analysis and refinement.
+Assumptions and estimations are necessary at this stage of development, and their presence is clearly noted in the following sections on analysis.
 
-Good progress has been made towards developing the mass, power, and link budgets of the various subsystems.
-Estimations have been made where necessary, and noted, and the development process permits back-filling these determinations with higher quality estimates as they become available.
-Preliminary design drawings are available as the last appendix, Appendix~\ref{app:julia}.
+Preliminary design drawings are avaiable in the last appendix, Appendix~\ref{app:julia}.
 
-\section{Mission Statement}
 \subsection{Primary Mission Objectives}
-TODO
+  The primary mission objective of SARGE is to monitor the entirety of Canada for the presence of greenhouse gasses that would indicate leaks in the transcontinental petrochemical pipelines.
+  To this end, SARGE covers all of contiguous Canada, but does not directly cover the many islands in the far north of the territories.
+  This should be acceptable, since there are no pipelines in those areas, and there is really only one pipeline above Hudson's Bay, ending just north of Mackenzie Bay, past Inuvik,~N.W.T.~\cite{pipelines}.
 \subsection{Secondary Mission Objectives}
-TODO
+  Since SARGE covers the entirety of Canada (and Alaska, U.S.) any application of regular monitoring could be co-located on the satellite.
+  Wildfire monitoring/detection, all industrial greenhouse gas emissions, and even meteorology.
+  One of the only terrestrial applications SARGE is unsuited for is communications, as it is out of sight for about 2/3 of each day.
 
 \section{Orbit Selection}
-The mission requirements state that the primary goal of this mission is to image the entirety of Canada at least every 14~days.
-To satisfy this requirement, a geosynchronous orbit with a nonstandard inclination was chosen.
-As shown in Figure~\ref{fig:groundtrack}, the ground track of a conical SAR with a minimum elevation angle of \ang{75} covers the entirety of contiguous Canada.
+The assigned mission requirements state that this satellite is to image the entirety of Canada at least once every 14~days.
+To satisfy this requirement, a geosynchronous orbit with a nonstandard high inclination (\ang{121}) was chosen.
+The ground track of a conical SAR (shown in Figure~\ref{fig:groundtrack}) with a minimum elevation angle of \ang{75} covers the entirety of contiguous Canada.
 
 \begin{figure}[hb]
   \centering
@@ -87,13 +91,15 @@ This regularity allows the satellite to image, process, and transmit one~fourtee
     \label{tab:orbit}
 \end{table}
 
-At high altitudes, like GEO, the gravitational forces of the Sun and the Moon become significant, but air drag is generally negligible~\cite{sse}.
-The stationkeeping consequences are explored in Appendix~\ref{app:stnkeep}.
+At high altitudes, like GEO, the gravitational forces of the Sun and the Moon become significant, but air drag is generally negligible~\cite[p. 81]{sse}.
+As well, the high inclination of SARGE allows it to avoid most of the clutter in the GEO belt, since most of the objects are within <\ang{5} inclination~\cite[p. 140]{sme}.
+Another advantage is the lack of an eclipse time in service (there may be a short eclipse during transit to orbit), as shown in Figure~\ref{fig:eclipse} in Section~\ref{sys:power}.
+Stationkeeping requirements are also quite low, as explored in Appendix~\ref{app:stnkeep} and mentioned in Section~\ref{sys:prop}, since the oblateness of Earth is primarily a factor in lower inclination orbits.
 
 \section{Spacecraft Bus}
 \subsection{Mass and Power Budget}
-According to David Everett of the NASA Goddard Space Flight Center, author of Chapter 14 ``Overview of Spacecraft Design'' in SME-SMAD, the first of the three steps of mass estimation is ``A rough order of magnitude based on payload mass''~\cite[p. 399]{sme}.
-Given that sentiment, and the preliminary nature of this report, I feel it is appropriate to base the initial mass estimate on what is described to be data representative of mission type \textit{and} historical data given in Table~14-18~\cite[p. 422]{sme}, as summarized in Table~\ref{tab:mass}, with comments noted in the third column.
+According to David Everett of the NASA Goddard Space Flight Center, the first of the three steps of mass estimation is ``A rough order of magnitude based on payload mass''~\cite[p. 399]{sme}.
+Given that sentiment, and approximate sizing of the power array (see Section~\ref{sys:power}), the initial mass estimate is based on data representative of mission type \textit{and} historical data given in Table~14-18, which can be found in Appendix~\ref{app:refs}, Figure~\ref{fig:1418}, and summarized in Table~\ref{tab:mass}, with comments noted in the third column.
 
 \begin{table}[h]
   \centering
@@ -104,30 +110,35 @@ Given that sentiment, and the preliminary nature of this report, I feel it is ap
     Subsystem & Mass\% & Mass & Comments \\
     \midrule
     Payload & \qty{32}{\percent} & \qty{200}{\kilo\gram} & Provided in requirements \\
-    Structure \& Mechanisms & \qty{24}{\percent} & \qty{150}{\kilo\gram} & Table~14-18 \\
-    Thermal Control & \qty{4}{\percent} & \qty{25.}{\kilo\gram} & ''\\
-    Power (incl. harness) & \qty{17}{\percent} & \qty{106}{\kilo\gram}&''\\
-    TT\&C & \qty{4}{\percent} & \qty{25}{\kilo\gram}&''\\
+    Structure \& Mechanisms & \qty{24}{\percent} & \qty{150}{\kilo\gram} & Taken from Table~14-18\\
+    Thermal Control & \qty{6}{\percent} & \qty{36.}{\kilo\gram} & \qty{11}{\kilo\gram} taken from Power subsystem\\ 
+    Power (incl. harness) & \qty{13}{\percent} & \qty{82}{\kilo\gram}&Less than usual since no eclipse\\
+    TT\&C & \qty{4}{\percent} & \qty{25}{\kilo\gram}&Taken from Table~14-18\\
     Data Processing & \qty{3}{\percent} & \qty{19}{\kilo\gram}&''\\
-    ADCS & \qty{6}{\percent} & \qty{37}{\kilo\gram}&''\\
-    Propulsion & \qty{7}{\percent} & \qty{44}{\kilo\gram}&''\\
+    ADCS & \qty{8}{\percent} & \qty{50}{\kilo\gram}& \qty{13}{\kilo\gram} taken from Power\\
+    Propulsion & \qty{7}{\percent} & \qty{44}{\kilo\gram}&Taken from Table~14-18\\
     Other & \qty{3}{\percent} & \qty{19}{\kilo\gram}&''\\
     \midrule 
     Total Dry Mass & \qty{100}{\percent} & \qty{625}{\kilo\gram} & \\
-    Propellant & \qty{72}{\percent} & \qty{450}{\kilo\gram} & May need less (see Appendix~\ref{app:stnkeep})\\
+    Propellant & \qty{142}{\percent} & \qty{885}{\kilo\gram} & Double expected amount in Table~14-18\\
+    Kick motor & \qty{12}{\percent} & \qty{75}{\kilo\gram} & Estimated mass of a jettisonable liquid motor\\
     \midrule 
-    Wet Mass & & \qty{1075}{\kilo\gram} & \\
+    Wet Mass & & \qty{1585}{\kilo\gram} & \\
     \bottomrule
   \end{tabular}
   \caption{Preliminary mass budget estimation, based on provided payload mass and the listing for ``High Earth'' in the SME-SMAD~\cite{sme}.}
   \label{tab:mass}
 \end{table}
 
+The breakdown of the power subsystem is available in Table~\ref{tab:powerbreakdown} in Section~\ref{sys:power}.
+Historical basis for the amount of propellant needed was insufficient for this particular satellite, primarily because of the steep inclination and the high-$\Delta V$ maneuvers required, detailed in Section~\ref{sys:prop}.
+The total wet mass still comes in at far less than the SpaceX Falcon~9's maximum lift-off mass of \qty{5800}{\kilo\gram} (Table~\ref{tab:launchertrade}), so a shared launch is still feasible (especially given the compact nature of SARGE).
 
-Like the Mass Budget in Table~\ref{tab:mass}, the preliminary power budget below in Table~\ref{tab:power} is based on David~Everett's chapter of the SME-SMAD.
-This time, however, a modification to the suggested weights in Table~14-20~\cite[p. 424]{sme}, since no power was allocated to the Structure~\&~Mechanisms subsystem.
-As noted in Section~\ref{sec:configuration}, there are several non-oneshot mechanisms on SARGE that will require power.
-The payload mass proportion was thus lessened by \qty{2}{\percent}, from \qty{35}{\percent} to \qty{33}{\percent} to give a corresponding mass proportion of \qty{2}{\percent} to the Structures~\&~Mechanisms subsystem.
+
+  Like the Mass Budget in Table~\ref{tab:mass}, the preliminary power budget below in Table~\ref{tab:power} is based on David~Everett's chapter of the SME-SMAD, Table~14-20 (Appendix~\ref{app:refs}, Figure~\ref{fig:1420}).
+  This time, however, a modification to the suggested weights in Table~14-20 was made to accomodate the two one-axis solar array gimbals notes in Section~\ref{sec:configuration}. 
+The payload power proportion was thus lessened by \qty{2}{\percent}, from \qty{35}{\percent} to \qty{33}{\percent} to give a corresponding power proportion of \qty{2}{\percent} to the Structures~\&~Mechanisms subsystem.
+The solar array and battery sizing calculations are presented in Section~\ref{sys:power}.
 
 \begin{table}[h]
   \centering
@@ -138,8 +149,8 @@ The payload mass proportion was thus lessened by \qty{2}{\percent}, from \qty{35
     \midrule
     Payload & \qty{33}{\percent} & \qty{350}{\watt} & Specified in requirements, mod. from Table~14-20 \\ 
     Structure \& Mechanisms & \qty{2}{\percent} & \qty{21}{\watt} & Mod. from Table~14-20 \\
-    Thermal & \qty{14}{\percent} & \qty{148}{\watt} & Table~14-20 \\
-    Power (incl. harness) & \qty{7}{\percent} & \qty{74}{\watt} & ''\\
+    Thermal & \qty{14}{\percent} & \qty{148}{\watt} & Taken from Table~14-20 \\
+    Power (incl. harness) & \qty{7}{\percent} & \qty{75}{\watt} & ''\\
     TT\&C & \qty{16}{\percent} & \qty{170}{\watt} & ''\\
     Data Processing & \qty{10}{\percent} & \qty{106}{\watt} &''\\
     ADCS & \qty{16}{\percent} & \qty{170}{\watt}&''\\
@@ -152,8 +163,30 @@ The payload mass proportion was thus lessened by \qty{2}{\percent}, from \qty{35
   \label{tab:power}
 \end{table}
 
-\subsection{Configuration}
+\subsection{Configuration}\label{sec:configuration}
 The configuration of SARGE is a nadir-pointing 3-axis stabilized solar-powered satellite.
+The two solar arrays are gimbaled in one axis with a range of $\pm\ang{10}$ to account for the slight variation in the spacecraft's orientation with respect to the sun as it travels along its orbital path (this angle was found in Appendix~\ref{app:orbplanes}).
+The size of the spacecraft can be estimated using the relations listed in Slideshow~3, Configuration, and shown in Table~\ref{tab:sizeest} below.
+
+\begin{table}[h]
+  \centering
+  \captionsetup{width=.75\linewidth,font=small,labelfont=bf}
+  \begin{tabular}{lll}
+    \toprule
+    Characteristic & Equation & Estimate \\
+    \midrule
+    Volume (\si{\meter\cubed}) & $V=0.01M$ & \qty{15.85}{\meter\cubed}\\
+    Linear Dimension (\si{\meter}) & $L=0.25M^{1/3}$ & \qty{2.91}{\meter}\\
+    Body Area (\si{\meter\squared}) & $A_b=V/L$ & \qty{5.44}{\meter\squared}\\
+    Moment of Inertia (\si{\kilo\gram\meter\squared}) & $I=0.01M^{5/3}$ & \qty{2155}{\kilo\gram\meter\squared}\\
+    \bottomrule
+  \end{tabular}
+  \caption{Estimate of spacecraft dimensions, where $M$ is spacecraft wet mass in \si{\kilo\gram}.}\label{tab:sizeest}
+\end{table}
+
+(Comment on the estimations). The mark is actually for assumptions for calculations? Idk, I modelled the satellite to fit the payload bruh.
+
+
 An annotated isometric view of the preliminary design/layout is shown in Figure~\ref{fig:iso}.
 
 \begin{figure}[h]
@@ -182,9 +215,7 @@ The remaining subsystems will all ideally fit in the remaining payload-sized are
 
 More engineering drawings are available in Appendix~\ref{app:julia}.
 
-Configuration
 
-Dimension calculations (0.5)
 
 Drawings (3.5)
 
@@ -192,12 +223,12 @@ Justification (2)
 
 
 \subsection{Preliminary Design of Spacecraft Subsystems}
-
-
-\subsubsection{Communications Subsystem}
+\subsubsection{Communications Subsystem}\label{sys:comms}
 Based on both slide deck 6, ``TTC'', and select portions of the SME-SMAD, the uplink and downlink link budgets are summarized in Table~\ref{tab:link}.
 As well, the downlink and uplink frequencies were chosen according to Professor~Jim~Wight's course handout for ELEC~4509.
 It's noted in that handout that frequency ranges 7.25-7.30~GHz and 7.975-8.025~GHz are reserved for downlink and uplink satellite communications, respectively~\cite[II, p. 3]{commlinks}.
+The downlink budget was conceived using the data rate/budget calculations in Appendix~\ref{app:linkbudget}.
+As a quick summary, the amount of data transmitted per 14 days is about \qty{1}{\tera\byte}, with a daily access window of \qty{9.5}{\hour} and a downlink data rate during that window of about \qty{2.5}{\mega\byte\per\second}, for a (QPSK-encoded) bandwidth of about \qty{12}{\mega\hertz} on a \qty{7.275}{\giga\hertz} carrier.
 \begin{table}[h]
   \centering
   \captionsetup{width=.75\linewidth,font=small,labelfont=bf}
@@ -212,15 +243,16 @@ It's noted in that handout that frequency ranges 7.25-7.30~GHz and 7.975-8.025~G
     $L_\text{atmosphere}$ & \num{10.00} & \si{\decibel} & Assumed\\
     $k$ & \num{-228.60} & \si{\decibel\joule\per\kelvin} & \\
     $B$ & \num{37.00} & \si{\decibel\hertz} & Eq.~\ref{eq:201}\\
-    $G_r$ & \num{28.61} & \si{\decibel} & Eq.~\ref{eq:100}\\
-    $T$ & \num{27.00} & \si{\decibel\kelvin} & Assumed\\
+    $G_r$ & \num{6.49} & \si{\decibel} & Figure~\ref{fig:hfss}\\
+    $T$ & \num{14.31} & \si{\decibel\kelvin} & Assumed\\
     \midrule
-    ${C/N}_\text{achieved}$ & \num{55.54} & \si{\decibel} & Eq.~\ref{eq:uplinkachieved}\\
+    ${C/N}_\text{achieved}$ & \num{33.42} & \si{\decibel} & Eq.~\ref{eq:uplinkachieved}\\
     ${C/N}_\text{required}$ & \num{8.16} & \si{\decibel} & Eq.~\ref{eq:202}\\
     \midrule
-    Margin & \num{47.39} & \si{\decibel}& \\
+    Margin & \num{25.27} & \si{\decibel}& \\
     \bottomrule \toprule
     Downlink & Value & Unit & Comments\\
+    \midrule
     $P_t$ & \num{20.00} & \si{\decibel\watt} & \qty{100}{\watt} of \qty{170}{\watt} estimated in power budget\\
     $G_t$ & \num{28.61} & \si{\decibel} & Eq.~\ref{eq:100}\\
     $L_\text{path}$ & \num{201.85} & \si{\decibel} & Eq.~\ref{eq:101}\\
@@ -240,6 +272,32 @@ It's noted in that handout that frequency ranges 7.25-7.30~GHz and 7.975-8.025~G
   \label{tab:link}
 \end{table}
 
+Unlike the preliminary design, for this design the uplink receiving antenna (i.e. the one on the spacecraft) is no longer the same as the parabolic downlink antenna.
+The concern is that the parabolic antenna is too directional for the satellite to reliably establish telecommand communications while in transit to the desired orbit.
+To mitigate this risk, several $4\lambda$ monopole antennas are now used to telecommand uplink.
+While long monopole antennas are usually undesirable for ground communications (as they direct much of the signal vertically), they are a perfect application for satellite telecommand.
+A length of $4\lambda$ was chosen based on the far-field radiation pattern shown in Figure~\ref{fig:radpat}.
+
+\begin{figure}[h]
+  \centering
+  \captionsetup{width=.75\linewidth,font=small,labelfont=bf}
+  \begin{subfigure}{.25\textwidth}
+    \includegraphics[width=\textwidth]{monopolepattern}
+    \caption{Far-field radiation pattern of $4\lambda$ monopole~[Chetvorno, \texttt{CC0}].}
+    \label{fig:radpat}
+  \end{subfigure}
+  \hspace{4em}
+  \begin{subfigure}{.35\textwidth}
+    \includegraphics[width=\textwidth]{4lambda_monopole_antenna_gain}
+    \caption{HFSS simulation results for $4\lambda=\qty{15}{\milli\meter}$ monopole antenna at \qty{8}{\giga\hertz}. $G=\qty{6.49}{\decibel}$.}
+    \label{fig:hfss}
+  \end{subfigure}
+  \caption{$4\lambda$ monopole antenna analysis.}
+\end{figure}
+ 
+To estimate the gain of a $4\lambda$ antenna for an \qty{8}{\giga\hertz} uplink, a model in Ansys HFSS was used, which resulted in the 3D gain plot in Figure~\ref{fig:hfss}, for a maximum gain of \qty{6.49}{\decibel}.
+Why it doesn't match Figure~\ref{fig:radpat}, I'm not sure, but it should still serve well as the telecommand antenna(s), since the margin is still quite high.
+
 The uplink ${C/N}_\text{achieved}$ was calculated using the following expression, where square brackets indicate logarithmic quantities:
 \begin{equation}\label{eq:uplinkachieved}
   [C/N]_\text{achieved}=[P_t] + [G_t] + [G_r] - [L_\text{path}] - [L_\text{point}] - [L_\text{atmosphere}] - [k] -[T]-[B]
@@ -254,30 +312,41 @@ Then,
 \begin{equation}\label{eq:downlinkachieved}
   [{C/N}]_\text{achieved}=[P_t]+[G_t]+\left[\frac GT\right]-[L_\text{path}]-[L_\text{point}]-[L_\text{atmosphere}]-[k]-[B]
 \end{equation}
+The ground station transmit power and the satellite noise temperature were both assumed based on representative data in the SME-SMAD.
+The $G/T$ figure in equation~\ref{eq:minGT} is specifically for Telesat certification, but that should be applicable given the age of the Gatineau station and Telesat's presence in the area.
+The \qty{10}{\decibel} atmosphere loss is mostly an expression of an allowable margin for atmospheric losses.
+Further analysis would be required to get an accurate estimate of expected atmospheric losses.
+Typically, they should be pretty low, since the signal really doesn't spend much time passing through the atmosphere at all.
 
-Antenna type selection (1). Discuss omni antenna for telecommand
-
-Discussion of assumptions and explanation/justification (3)
-
-\subsubsection{Power Subsystem}
+\subsubsection{Power Subsystem}\label{sys:power}
 max eclipse time calculations (3)
 
 solar panel sizing and power generation calcs (3)
 
 bus design (voltage, regulation) and explanation/justification (1)
 
+28V - minimize current drawn, power slides. $P=VI$ and $P_{\text{loss}}=RI^2$
+
+Direct Energy Transfer -- no batteries cause no eclipse
+
+Unregulated -- no eclipse
+
+
+
 harness calculations (1)
 
 battery sizing calculations and discussion whether batteries are needed (2)
 
-\subsubsection{Thermal Control Subsystem}
+No secondary batteries, estimated 5kg LiSO2 primary for up to days and 1kWh power.
+
+\subsubsection{Thermal Control Subsystem}\label{sys:thermal}
 WCC calcs (4)
 
 WCH calcs (4)
 
 thermal control hardware selection (including insulation and coatings) with explanation/justification (2)
 
-\subsubsection{Guidance and Navigation Subsystem}
+\subsubsection{Guidance and Navigation Subsystem}\label{sys:nav}
 Relevant perturbations and explanation (1)
 
 orbit control strategy (maintenance, actuators/sensors) (2)
@@ -286,7 +355,7 @@ choice of autonomous or groun control with explanation/justification (2)
 
 de-orbiting strategy and explanation (1)
 
-\subsubsection{Propulsion Subsystem}
+\subsubsection{Propulsion Subsystem}\label{sys:prop}
 Orbital transfer from injected orbit (calculations and justification for maneuver choice) (3)
 
 Propellant mass calculations for maintenance and deo-orbiting (3) take from appendix and put here
@@ -296,7 +365,7 @@ Given the GTO... stationkeeping... disposal...
 Can't use ion engine because of power requirements...\cite{next}
 
 yeah
-\subsubsection{Attitude Determination and Control Subsystem}
+\subsubsection{Attitude Determination and Control Subsystem}\label{sys:adcs}
 attitude control strategy and explanation/justification (2)
 
 actuator selection and explanation/justification (1)
@@ -305,13 +374,13 @@ sensor selection and justification/explanation (2)
 
 pointing requirements, maneuvers needed and explanation/justification (1)
 
-\subsubsection{Structures}
+\subsubsection{Structures}\label{sys:struct}
 material selections and explanation/justification (2.5)
 
 mechanism selection and explanation/justification (2.5)
 
 
-\section{Launcher Selection Trade Study}
+\section{Launcher Selection Trade Study}\label{sec:launcher}
 A selection of launch platforms still in use as of 2025 were considered, with the key parameters summarized in Table~\ref{tab:launchertrade}.
 All launchers deliver their payload to GTO, with fairly minor differences in delivered transfer orbit, with the exception of the Ariane~62.
 
@@ -413,7 +482,7 @@ The $\Delta V$ required for such a change is~\cite{aero3240}:
   \Delta V=\sqrt{v_1^2+v_2^2-2v_1v_2\cos{\Delta i}}
 \end{equation}
 where $\Delta i=\ang{121}-\ang{28.5}=\ang{92.5}$, and $v_1,\,v_2$ are the orbital velocities of the transfer orbit and final orbit respectively.
-The full calculation is scanned and attached before the preliminary drawings of Appendix~\ref{app:julia}.
+The full calculation is scanned and attached in Appendix~\ref{app:orbcalcs}.
 Hand calculations were chosen as a change of pace.
 The final result is a $\Delta V$ of \qty{3.5253}{\kilo\meter\per\second}.
 
@@ -632,7 +701,25 @@ And finally, the minimum carrier to noise is calculated in the same was as Eq.~\
 \begin{equation}\label{eq:202}
   {C/N}_\text{required}=\frac RB\ln\left(\frac{1}{2{BER}}\right)=\qty{8.16}{\decibel}
 \end{equation}
+\clearpage
+\section{Referenced Tables and Figures}\label{app:refs}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.8\textwidth]{1418}
+  \caption{Table 14-18 in SME-SMAD~\cite[p. 422]{sme}.}
+  \label{fig:1418}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.8\textwidth]{1420}
+  \caption{Table 14-20 in SME-SMAD~\cite[p. 424]{sme}.}
+  \label{fig:1420}
+\end{figure}
 
+
+\clearpage
+\section{Orbital Transfer Calculations}\label{app:orbcalcs}
+figure
 
 
 \vfill
