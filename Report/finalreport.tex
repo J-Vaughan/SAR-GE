@@ -11,6 +11,9 @@
 \usepackage{subfig}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{pdflscape}
+\usepackage{mhchem}
 \let\temp\rmdefault
 \usepackage{fourier}
 \let\rmdefault\temp
@@ -319,32 +322,121 @@ Further analysis would be required to get an accurate estimate of expected atmos
 Typically, they should be pretty low, since the signal really doesn't spend much time passing through the atmosphere at all.
 
 \subsubsection{Power Subsystem}\label{sys:power}
-max eclipse time calculations (3)
 
-solar panel sizing and power generation calcs (3)
+Given SARGE's highly inclined orbit, there is in fact no eclipse time at all since the orbital plane is at about a right angle to the ecliptic plane.
+The solar panels were sized according to Table~21-12 in the SME-SMAD for preliminary solar array sizing (Appendix~\ref{app:refs}, Figure~\ref{fig:2112}).
+The process is laid out in Table~\ref{tab:powersub}.
 
-bus design (voltage, regulation) and explanation/justification (1)
+\begin{table}
+  \centering
+  %
+  \begin{tabular}{c|ll|rl|l}
+    \toprule
+    Step & Description & & Value & Unit & Notes\\
+    \midrule
+    \multirow{3}{7em}{Requirements and Constraints} & Power required & $P_\text{req}$ & 1061 &\si{\watt} & \\
+    & Eclipse duration & $T_e$ & 0 & \si{\second} & \\
+    & Design lifetime & $L$ & 5 & \si{yr} & \\
+    \midrule
+    \multirow{4}{7em}{Power to be produced} & Light duration & $T_d$ & 86170.5 & \si{\second} & $=P-T_e$\\
+    & Path efficiency, eclipse & $X_e$ & 0.65 & & Unused\\
+    & Path efficiency, day & $X_d$ & 0.85 & & Direct energy transfer\\
+    & Required array power & $P_\text{sa}$ & 1,248 & \si{\watt} & $=P_\text{req}/X_d$\\
+    \midrule
+    \multirow{2}{7em}{Type of solar panel} & GaAs efficiency & $\eta$ & 18.5 & \si{\percent} & \\
+    & Worst case power per cell & $P_0$ & 244.4 & \si{\watt\per\meter\squared} & $=\eta\cdot 1321$ SS\\
+    \midrule
+    \multirow{3}{7em}{BOL areal capacity} & Inherent degredation & $I_d$ & 0.72 & & Nominal\\
+    & Worst case incident angle & $\theta$ & 10 & \si{\degree} & Appendix~\ref{app:orbplanes}\\
+    & BOL performance & $P_\text{BOL}$ & 173.3 & \si{\watt\per\meter\squared} & $=P_0I_d\cos\theta$\\
+    \midrule
+    \multirow{3}{7em}{EOL production} & Degradation per year & $D$ & 2.75 & \si{\percent} & GaAs\\
+    & Life degradation & $L_d$ & 0.87 & & $=(1-D)^L$\\
+    & EOL performance & $P_\text{EOL}$ & 150.7 & \si{\watt\per\meter\squared} & $=L_dP_\text{BOL}$\\
+    \midrule
+    & Area needed & $A_\text{sa}$ & 8.28 & \si{\meter\squared} & $=P_\text{req}/P_\text{EOL}$\\
+    & Mass & $M_\text{sa}$ & 22.36 & \si{\kilo\gram} & GaAs SJ, \qty{2.7}{\kilo\gram\per\meter\squared}\\
+    & Price & & 1.063 & MM\$US & GaAs SJ, \qty{852}{\$\per\watt BOL}\\
+    \bottomrule
+  \end{tabular}
+  \caption{Power subsystem solar array sizing.}
+  \label{tab:powersub}
+\end{table}
 
-28V - minimize current drawn, power slides. $P=VI$ and $P_{\text{loss}}=RI^2$
+The only time a battery may be needed is during the ecliptic transfer orbit from launch to GEO.
+The period $T$ of that orbit ($a=\qty{24364}{\kilo\meter}$, $T=2\pi\sqrt{a^3/\mu}$) is about \qty{10.5}{\hour}.
+Being generous, we'll allow for 1.5 orbits (\qty{17.3}{\hour}) of primary battery power (i.e. one ``go-around'').
+For this, we'll choose a \ce{LiSO2} battery system (chosen for the ``day-scale'' energy storage performance) with a specific energy density of \qty{350}{\watt\hour\per\kilo\gram}.
+Assuming the payload is off during this transfer orbit, the power needed is \qty{711}{\watt}, and thus we need to store \qty{12.3}{\kilo\watt\hour} of energy, giving a battery mass of \qty{35}{\kilo\gram} (\qty{43}{\percent} of power subsystem mass).
+The solar array takes up \qty{30}{\percent} of the power subsystem mass (with \qty{10}{\percent} margin), and the remaining \qty{22}{\kilo\gram} (\qty{27}{\percent}) is left for the harness with \qty{10}{\percent} margin.
+Ideally, the spent primary battery would be ejected along with the kick motor to ease the fuel requirements for stationkeeping, but not for this current analysis.
+The bus will be \qty{28}{\volt} to minimize current drawn and resistive losses, and since there's no eclipse, the bus will operate on direct energy transfer, without regulation.
 
-Direct Energy Transfer -- no batteries cause no eclipse
-
-Unregulated -- no eclipse
-
-
-
-harness calculations (1)
-
-battery sizing calculations and discussion whether batteries are needed (2)
-
-No secondary batteries, estimated 5kg LiSO2 primary for up to days and 1kWh power.
 
 \subsubsection{Thermal Control Subsystem}\label{sys:thermal}
-WCC calcs (4)
+To analyze the thermal situation of SARGE, the entire spacecraft body was assumed to be diffuse, gray, and isothermal.
+Each principal axis was analyzed individually, for a total of 6 regions covering (1) the sides of sarge (along direction of travel); (2) the frontal (sun-facing) area of the solar panels only; (3) the frontal area of the spacecraft body only; (4) the bottom of the spacecraft (nadir pointing); (5) the entire back area of the solar panels and body; and (6) the top surface of the spacecraft.
+The thickness of the solar panels was considered negligible.
 
-WCH calcs (4)
+The worst-case hot and cold calculations are shown in Table~\ref{tab:thermal}.
 
-thermal control hardware selection (including insulation and coatings) with explanation/justification (2)
+\begin{landscape}
+  \begin{table}[h]
+    \centering
+    %\captionsetup
+    \begin{tabularx}{1.00\linewidth}{ll|r|rrrrrr|l|X}
+      \toprule
+      WCH & & Total & Sides & F. Solar & F. Body & Bottom & Back & Top & Unit & Notes\\
+      \midrule
+      Material & & & 5ST & GaAs & 5ST & Z93 & Z93 & 2ST & & Material key follows table\\
+      \midrule
+      Solar Irradiance & $G_s$ & & 49.59 & 1421 & 1421 & 2.48 & 0 & 2.48 & \si{\watt\per\meter\squared} & WS, \ang{2} nadir error, \ang{0.1} rest error\\
+      Solar absorption & $\alpha_s$ & & .07875 & .85575 & .07875 & .18375 & .18375 & .07875 & & \qty{5}{\percent} degradation EOL values\\
+      IR emissivity & $\varepsilon_\text{IR}$ & & .741 & .57 & .741 & .874 & .874 & .627 & & GaAs ass. .6, and \qty{5}{\percent} EOL deg.\\
+      Earth albedo & $\mathrm{a}$ & & & & & 35 &  & & \si{\percent} & +5\% albedo\\
+      Earth IR flux & $\dot q_E$ & & 9 & 9 & 9 & 258 & 9 & 0 & \si{\watt\per\meter\squared} & High\\
+      Generated power & $\dot Q_w$ & 844.33 & & & & & & & \si{\watt} & Justification following\\
+      Area & $A_\text{sc}$ & 20.5 & 0.5 & 8.5 & 1 & 0.5 & 9.5 & 0.5 & \si{\meter\squared} & \\
+      Earth ang. radius & $\rho$ & .15184 & & & & & & & \si{rad} & $=\sin^{-1}(R_E/r)$\\
+      \midrule
+      Sun IN & & 10,450 & 2 & 10,336 & 112 & 0 & 0 & 0 & \si{\watt} & $=G_s\alpha_s A_\text{sc}$\\
+      Earth IR IN & & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \si{\watt} & $=(\dot q_E\sin^2\rho)(1-\cos\rho)\varepsilon_\text{IR}/2$\\
+      Albedo IN & & 0 & 0 & 0 & 0 & 0 & 0 & 0 & \si{\watt} & $=G_sA_\text{sc}\mathrm{a}\alpha_s(1-\cos\rho)\sin^2\rho/2$\\
+      Total heat & $\dot Q_\text{out}$ & 11,295 & & & & & & & \si{\watt} & Including SC power gen\\
+      \midrule
+      Eff. emissive area & $\varepsilon_\text{IR}\cdot A_\text{sc}$ & 15.01 & 0.3705 & 4.845 & 0.741 & 0.437 & 8.303 & 0.3135 & \si{\meter\squared} & \\
+      WCH Temperature & $T$  & 339.4 & & & & & & & \si{\kelvin} & $=\sqrt[4]{\dot{Q}_\text{out}/\sum{\varepsilon_\text{IR}A_\text{sc}}}=\qty{66.26}{\celsius}$\\
+      \bottomrule\toprule
+      WCC & & Total & Sides & F. Solar & F. Body & Bottom & Back & Top & Unit & Notes \\
+      \midrule
+      Solar Irradiance & $G_s$ & & 46.10 & 1321 & 1321 & 2.31 & 0 & 2.31 & \si{\watt\per\meter\squared} & SS, same errors\\
+      Solar absorption & $\alpha_s$ & & .075 & .815 & .075 & .175 & .175 & .075 & & BOL\\
+      IR emissivity & $\varepsilon_\text{IR}$ & & .78 & .65 & .78 & .92 & .92 & .66 & & BOL\\
+      Earth albedo & $\mathrm{a}$ & & & &  & 25 & & & \si{\percent} & -5\% albedo\\
+      Earth IR flux & $\dot q_E$ & & 7.54 & 7.54 & 7.54 & 216 & 7.54 & 0 & \si{\watt\per\meter\squared} & Low\\
+      \midrule
+      Sun IN & & 9,252 & 2 & 9,151 & 99 & 0 & 0 & 0 &\si{\watt} & Same calculations as WCH\\
+      Total heat & $\dot Q_\text{out}$ & 10,097 & & & &  & & & \si{\watt} & Including SC power gen\\
+      \midrule
+      Eff. emissive area & $\varepsilon_\text{IR}\cdot A_\text{sc}$&16.23 & 0.39 & 5.525 & 0.78 & 0.46 & 8.74 & 0.33 & \si{\meter\squared}&\\
+      WCC Temperature & $T$ & 323.7 & & & & & & & \si{\kelvin} & $=\qty{50.51}{\celsius}$\\
+      \bottomrule
+    \end{tabularx}
+    \caption{Worst-case thermal calculations.}
+    \label{tab:thermal}
+  \end{table}
+\end{landscape}
+5ST and 2ST are 5~mil Silver-coated Teflon and 2~mil Silver-coated Teflon, respectively, and Z93 is the Z93~white paint.
+Values for these materials were taken from Table~22-14 in SME-SMAD (Appendix~\ref{app:refs}, Figure~\ref{fig:2214}).
+The first configuration for SARGE had the back surfaces covered in 2~mil Silver-coated Teflon, which resulted in a WCH temperature of \qty{81}{\celsius} and a WCC of \qty{64}{\celsius}.
+Given the typical operating temperature ranges in Slideshow~10, Thermal, this range seemed high.
+Changing the back surfaces to Z93~white paint resulted in a much milder steady-state situation.
+
+The generated power of the spacecraft is lower than the total power in the power budget as I assumed that the \qty{100}{\watt} downlink transmitter power is emitted as signal (RF-waves) and that a third of the payload power (\qty{117}{\watt}) is similarly emitted as radar waves.
+Since SARGE is quite far from the Earth, it makes sense that the reflected sunlight and Earth IR emissions are very low, essentially rounding errors. Their contributions are still included in the totals, but it is essentially negligible.
+
+Galium Arsenside panels were assumed to be approximately \qty{100}{\percent} absorptive of solar energy~\cite{gaas}, with the \qty{18.5}{\percent} efficiency of electrical conversion taken into account.
+The IR emissivity was estimated to be around 0.6, the lower end of Silicon cells.
 
 \subsubsection{Guidance and Navigation Subsystem}\label{sys:nav}
 Relevant perturbations and explanation (1)
@@ -714,6 +806,18 @@ And finally, the minimum carrier to noise is calculated in the same was as Eq.~\
   \includegraphics[width=.8\textwidth]{1420}
   \caption{Table 14-20 in SME-SMAD~\cite[p. 424]{sme}.}
   \label{fig:1420}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.4\textwidth]{2214}
+  \caption{Table 22-14 in SME-SMAD~\cite[p. 695]{sme}.}
+  \label{fig:2214}
+\end{figure}
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=.8\textwidth]{2112}
+  \caption{Table 21-12 in SME-SMAD~\cite[p. 644]{sme}.}
+  \label{fig:2112}
 \end{figure}
 
 
